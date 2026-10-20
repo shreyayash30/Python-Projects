@@ -1,0 +1,90 @@
+phonebook={}
+
+print("To store phone numbers and names in a phonebook")
+total=int(input("Enter the number of Phone Numbers You want to add to your phonebook:"))
+
+for i in range(total):
+    name = input("Enter the Name: ") 
+    number=int(input("Enter the Number:")) 
+    phonebook[number]= name
+
+qn=input("Would You like to see it in phonebook format?\n please reply with yes or no")
+if qn.lower()=="yes":
+    print("Here is Your Phonebook:\n")
+    print("S.no\tName\t\tNumber")
+    s_no=0
+    
+    for i,j in phonebook.items():
+        s_no+=1
+        print(s_no,"\t",j,"\t", i)
+
+elif qn.lower()=="no":
+    qn1=input("Then, Would you like to access something in your phonebook")
+    
+    if qn1.lower()=="yes":
+        qn2=int(input("for name enter 0, for Phone number enter 1"))
+        
+        if qn2==0:
+            qn3=input("Enter the Name:")
+            found = False
+            
+            for i, j in phonebook.items():
+                if j.lower() == qn3.lower():
+                    print(i)
+                    found = True
+            
+            if found== False:
+                print("Name not found")
+        
+        elif qn2==1:
+            qn4=int(input("Enter the Number:"))
+            found = False
+            
+            for i, j in phonebook.items():
+                if i == qn4:
+                    print(j)
+                    found = True
+            
+            if found == False:
+                print("Number not found")
+        else:
+            print("Invalid, Please Resond with 0 or 1")
+    
+    elif qn1.lower()=="no":
+        exit_= input("Then would you like to exit the program? \n Please respond with yes or no")
+        
+        if exit_.lower()=="yes":
+            print("Thank You")
+        
+        elif exit_.lower()=="no":
+            add = input("Then, Would you like to add another contact? ")
+            
+            if add.lower() == "yes":
+                name = input("Enter the Name: ")
+                number = int(input("Enter the Number: "))
+                phonebook[number]= name
+                print("Contact added successfully!")
+                qn4=input("Would You like to see it in phonebook format?\n please reply with yes or no")
+                if qn4.lower()=="yes":
+                    print("Here is Your Phonebook:\n")
+                    print("S.no\tName\t\tNumber")
+                    s_no=0
+                    for i,j in phonebook.items():
+                        s_no+=1
+                        print(s_no,"\t",j,"\t", i)
+                elif qn4.lower() == "no":
+                    print("Thank you for using the phonebook!")
+                else:
+                    print("Invalid, Please Resond with yes or no")     
+            elif add.lower() == "no":
+                print("Thank you for using the phonebook!")
+        else:
+            print("Invalid, Please Resond with yes or no")
+elif qn.lower()!= "yes" and qn.lower()!="no":
+    print("Invalid, Please Resond with yes or no")
+    
+            
+        
+    
+
+
