@@ -1,6 +1,4 @@
 phonebook={}
-  
-print("Program To store phone numbers and names in a phonebook\n")
 total=int(input("Enter the number of Phone Numbers You want to add to your phonebook\n(note that the phone numbers must not be the same):"))
 
 for i in range(total):
@@ -84,13 +82,7 @@ elif qn1.lower()=="no":
                 s_no += 1
                 print(s_no, "\t", j, "\t", i)
         elif add.lower() == "no":
-                print("Exiting the program...\nThank you for using the phonebook!")
+                print("Exiting the your phonebook..\nThank you for using the phonebook!")
         else:
             print("Invalid, Please Resond with yes or no")
-
-        
-    
-
-
-
 
